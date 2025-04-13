@@ -28,9 +28,9 @@ function Country ({country, handleVisitedCountries}) {
                         <p>Capital: {country.capital}</p>
                     </div>
                     <div className="card-actions justify-end">
-                    <button className={`btn ${visited ? 'btn-secondary' : 'btn-primary'}`} onClick={() => handleVisit(country)}>
+                    <button className={`btn ${visited ? 'bg-rose-400 btn-disabled' : 'btn-primary '}`} onClick={() => handleVisit(country)}>
                         {
-                            visited ? 'Visited' : 'Note Visited'
+                            visited ? 'Visited' : 'Not Visited'
                         }
                     </button>
                     </div>
