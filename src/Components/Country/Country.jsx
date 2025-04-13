@@ -5,9 +5,9 @@ import React, { useState } from "react";
 function Country ({country, handleVisitedCountries}) {
     const [visited, setVisited] = useState(false);
 
-    const handleVisit = (country) => {
+    const handleVisit = (ele) => {
         setVisited(!visited);
-        handleVisitedCountries(country);
+        handleVisitedCountries(ele);
     }
 
     return (
