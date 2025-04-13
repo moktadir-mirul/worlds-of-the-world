@@ -2,11 +2,12 @@ import React, { useState } from "react";
 
 
 
-function Country ({country}) {
+function Country ({country, handleVisitedCountries}) {
     const [visited, setVisited] = useState(false);
 
-    const handleVisit = () => {
+    const handleVisit = (country) => {
         setVisited(!visited);
+        handleVisitedCountries(country);
     }
 
     return (
@@ -21,13 +22,13 @@ function Country ({country}) {
                 <div className="card-body">
                     <h2 className="card-title text-2xl">{country.name.common}</h2>
                     <div className="text-lg">
-                        <p>{country.name.official}</p>
+                        <p className="text-xl"><strong>Official Name: </strong>{country.name.official}</p>
                         <p>Population: {country.population}</p>
                         <p>Region: {country.region}</p>
                         <p>Capital: {country.capital}</p>
                     </div>
                     <div className="card-actions justify-end">
-                    <button className={`btn ${visited ? 'btn-secondary' : 'btn-primary'}`} onClick={handleVisit}>
+                    <button className={`btn ${visited ? 'btn-secondary' : 'btn-primary'}`} onClick={() => handleVisit(country)}>
                         {
                             visited ? 'Visited' : 'Note Visited'
                         }
